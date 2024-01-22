@@ -14,7 +14,7 @@ class QuoteController extends AbstractController
         $entityManager = $doctrine->getManager();
 
         $quote = new Quote();
-        $quote->setText("Toute la gestion des erreurs en PHP consiste à trouver l'équilibre entre la perspicacité du développeur et l'expérience utilisateur")
+        $quote->setText("Toute la gestion des erreurs en PHP consiste à trouver l'équilibre entre la perspicacité du développeur et l'expérience utilisateur");
         $quote->setAuthor("Gary Clarke");
 
         $entityManager->persist($quote);

@@ -45,4 +45,15 @@ class QuoteRepository extends ServiceEntityRepository
 //            ->getOneOrNullResult()
 //        ;
 //    }
+/**@return Quote[] Returns an array of Quote objects*/
+   public function findOneByAuthorField($value): array
+   {
+       return $this->createQueryBuilder('q')
+           ->andWhere('q.author = :val')
+           ->setParameter('val', $value)
+           ->orderBy('q.id','ASC')
+           ->getQuery()
+           ->getResult()
+       ;
+   }
 }
